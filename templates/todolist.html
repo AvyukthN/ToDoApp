@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1 style = "margin-left: 10%; margin-top: 2%;">TO DO LIST => <a style = "margin-left: 10px;">{{ numAssignments }}</a> Assignments To Do</h1>
+<br>
+<ul style = "margin-left: 10%;">
+    {% for item in arrayOfData %}
+    <li>{{ item.desc }} <b>{{ item.duedate }}</b>&nbsp;<form><input type = "submit" value = "Done with {{ item.desc }}" name = "desc"/></form></li>
+    {% endfor %}
+</ul>
+<br>
+<a style = "margin-left: 10%;" class = "btn btn-secondary" href = "{{ url_for('home') }}">Back</a>
+{% endblock %}
